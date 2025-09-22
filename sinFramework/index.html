@@ -10,9 +10,18 @@
 
     <header class="main-header">
         <div class="header-content">
-            <div class="logo-placeholder">
-                <!-- Tu futuro logo aquí -->
-                <span class="logo-text">Mi Portafolio</span>
+            <!-- (NUEVO) Contenedor para alinear logo y conmutador a la izquierda -->
+            <div class="header-left">
+                <div class="logo-placeholder">
+                    <span class="logo-text">Portafolios</span>
+                </div>
+                <!-- (NUEVO) Conmutador de perfiles -->
+                <div class="portfolio-switcher" id="portfolio-switcher">
+                    <img src="assets/images/tu-foto.png" alt="Ver mi portafolio" 
+                         class="portfolio-option active" data-portfolio="companero1">
+                    <img src="assets/images/juanda.jpg" alt="Ver portafolio de Juanda" 
+                         class="portfolio-option" data-portfolio="companero2">
+                </div>
             </div>
             <nav class="main-nav">
                 <a href="#inicio">Inicio</a>
@@ -40,6 +49,8 @@
             </div>
         </section>
 
+        <!-- El resto de tu HTML sigue igual... -->
+        
         <!-- SECCIÓN ESTUDIOS -->
         <section id="estudios" class="section-container">
             <h1 class="section-title">Estudios</h1>
@@ -166,7 +177,6 @@
                 <!-- Los contactos se listarán aquí dinámicamente -->
             </div>
         </section>
-
     </main>
 
     <footer class="main-footer">

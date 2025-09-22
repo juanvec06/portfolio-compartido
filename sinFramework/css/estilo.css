@@ -11,7 +11,7 @@
 /* --- Estilos Generales --- */
 body {
     background-color: var(--bg-color);
-    background-image: url('../assets/images/galaxia-bg.jpg'); /* Asegúrate de tener una imagen de fondo aquí */
+    background-image: url('../assets/images/galaxia-bg.jpg'); /* Fondo por defecto */
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: overlay;
@@ -20,7 +20,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    transition: background-image 0.5s ease-in-out; /* (NUEVO) Transición suave para el fondo */
 }
+
+/* (NUEVO) Clase para cambiar el fondo cuando el segundo perfil está activo */
+body.portfolio-companero2-active {
+    background-image: url('../assets/images/galaxia-bg2.jpg');
+}
+
 
 h2{
     color: var(--primary-neon-color);
@@ -54,10 +61,45 @@ h1,h3{
     height: 70px;
 }
 
+/* (NUEVO) Contenedor para logo y conmutador */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espacio entre el logo y el conmutador */
+}
+
 .logo-placeholder .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
+}
+
+/* (NUEVO) Estilos del Conmutador de Perfiles */
+.portfolio-switcher {
+    display: flex;
+    gap: 1rem; /* Espacio entre las fotos */
+}
+
+.portfolio-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #555; /* Borde para el perfil inactivo */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6; /* Perfil inactivo está más atenuado */
+}
+
+.portfolio-option:hover {
+    opacity: 1;
+    border-color: var(--text-color);
+}
+
+.portfolio-option.active {
+    opacity: 1;
+    border-color: var(--primary-neon-color); /* Borde neón para el perfil activo */
+    box-shadow: 0 0 10px var(--primary-neon-color);
+    transform: scale(1.1); /* Ligeramente más grande */
 }
 
 .main-nav {
@@ -65,6 +107,7 @@ h1,h3{
     gap: 2rem;
 }
 
+/* El resto del CSS sigue igual... */
 .main-nav a {
     color: var(--text-color);
     text-decoration: none;
@@ -78,31 +121,27 @@ h1,h3{
     text-shadow: 0 0 10px var(--primary-neon-color);
 }
 
-/* --- Contenedor de Secciones (ACTUALIZADO) --- */
 .section-container {
     max-width: 960px;
-    margin: 4rem auto; /* Aumenta el margen para separar de la sección de inicio */
+    margin: 4rem auto;
     padding: 2rem;
     background: var(--container-bg);
     border: 1px solid var(--secondary-neon-color);
     border-radius: 10px;
-    /* Se eliminó el box-shadow inset */
 }
 
-/* --- Sección Inicio (NUEVO ESTILO) --- */
 #inicio {
-    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Efecto de desvanecimiento radial */
     background: radial-gradient(ellipse at center, rgba(11, 30, 58, 0.8) 0%, rgba(22, 11, 58, 0) 70%);
 }
 
 .inicio-content {
     display: flex;
-    flex-direction: column; /* Apila la foto sobre el texto */
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
     max-width: 800px;
@@ -110,7 +149,7 @@ h1,h3{
 }
 
 .personal-photo {
-    width: 180px; /* Un poco más grande */
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     border: 3px solid var(--primary-neon-color);
@@ -121,7 +160,6 @@ h1,h3{
     font-size: 2.5rem;
 }
 
-/* --- Tabla de Estudios --- */
 .studies-table {
     width: 100%;
     border-collapse: collapse;
@@ -136,7 +174,6 @@ h1,h3{
     background-color: rgba(248, 0, 255, 0.2);
 }
 
-/* --- Carrusel de Pasatiempos --- */
 .carousel {
     position: relative;
     max-width: 700px;
@@ -187,7 +224,6 @@ h1,h3{
 .carousel-control.prev { left: 10px; }
 .carousel-control.next { right: 10px; }
 
-/* --- Lista de Proyectos --- */
 .project-list {
     list-style: none;
     padding: 0;
@@ -202,7 +238,6 @@ h1,h3{
     text-decoration: none;
 }
 
-/* --- Formulario de Contacto --- */
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -256,8 +291,6 @@ h1,h3{
     box-shadow: 0 0 20px #ff3333;
 }
 
-
-/* --- Lista de Contactos Guardados --- */
 .contact-item {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1rem;
@@ -276,13 +309,12 @@ h1,h3{
 .edit-btn { border-color: #33aaff; color: #33aaff; }
 .delete-btn { border-color: #ff3333; color: #ff3333; }
 
-/* Mensajes de feedback */
 #messages {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
     text-align: center;
-    display: none; /* Oculto por defecto */
+    display: none;
 }
 .success-message {
     background-color: rgba(0, 255, 0, 0.2);
@@ -297,7 +329,6 @@ h1,h3{
     display: block;
 }
 
-/* --- Footer --- */
 .main-footer {
     text-align: center;
     padding: 1rem;

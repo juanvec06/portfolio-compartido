@@ -1,6 +1,65 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- LÓGICA DEL CARRUSEL ---
+    // --- (NUEVO) DATOS DE LOS PORTAFOLIOS ---
+    const portfolioData = {
+        'companero1': {
+            nombre: 'Tu Nombre Completo',
+            foto: 'assets/images/tu-foto.png',
+            // Puedes añadir más datos aquí si quieres expandir la funcionalidad
+        },
+        'companero2': {
+            nombre: 'Juan David Perdomo',
+            foto: 'assets/images/juanda.jpg',
+        }
+    };
+
+    // --- (NUEVO) LÓGICA DEL CONMUTADOR DE PERFILES ---
+    const switcher = document.getElementById('portfolio-switcher');
+    
+    function updatePortfolioContent(portfolioId) {
+        const data = portfolioData[portfolioId];
+        if (!data) return;
+
+        // 1. Cambiar la foto principal
+        document.querySelector('.personal-photo').src = data.foto;
+        // Opcional: Cambiar también el nombre
+        document.querySelector('.inicio-text h2').textContent = data.nombre;
+
+        // 2. Cambiar el fondo del body
+        // Primero, nos aseguramos de que la clase no esté presente
+        document.body.classList.remove('portfolio-companero2-active');
+        // Luego, la añadimos SOLO si es el compañero 2
+        if (portfolioId === 'companero2') {
+            document.body.classList.add('portfolio-companero2-active');
+        }
+
+        // 3. Actualizar el estado visual del conmutador
+        document.querySelectorAll('.portfolio-option').forEach(img => {
+            img.classList.remove('active');
+            if (img.dataset.portfolio === portfolioId) {
+                img.classList.add('active');
+            }
+        });
+
+        // 4. Guardar la selección en localStorage para que sea persistente
+        localStorage.setItem('currentPortfolio', portfolioId);
+    }
+
+    switcher.addEventListener('click', function(e) {
+        // Usamos delegación de eventos para escuchar clics en las imágenes
+        if (e.target.classList.contains('portfolio-option')) {
+            const portfolioId = e.target.dataset.portfolio;
+            updatePortfolioContent(portfolioId);
+        }
+    });
+
+    // --- (NUEVO) Carga inicial del portafolio ---
+    // Revisa si hay una selección guardada, si no, usa el 'companero1' por defecto
+    const savedPortfolio = localStorage.getItem('currentPortfolio') || 'companero1';
+    updatePortfolioContent(savedPortfolio);
+
+
+    // --- LÓGICA DEL CARRUSEL (Tu código original) ---
     const carouselInner = document.querySelector('.carousel-inner');
     const items = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.carousel-control.prev');
@@ -26,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentIndex);
     });
 
-    // --- LÓGICA DEL FORMULARIO DE CONTACTO ---
+    // --- LÓGICA DEL FORMULARIO DE CONTACTO (Tu código original) ---
     const contactForm = document.getElementById('contact-form');
     const contactList = document.getElementById('contact-list');
     const messagesDiv = document.getElementById('messages');
@@ -135,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showMessage('Todos los contactos han sido eliminados.', 'success');
     });
 
-    // Carga inicial
+    // Carga inicial de tus funciones originales
     renderContacts();
     showSlide(currentIndex);
 });
