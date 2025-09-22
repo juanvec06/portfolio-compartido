@@ -1,0 +1,306 @@
+/* --- Variables de Color y Estilo Neón --- */
+:root {
+    --bg-color: #000000e5; /* Fondo de universo oscuro */
+    --primary-neon-color: #00ffff; /* Cian neón */
+    --secondary-neon-color: #000000; 
+    --text-color: #c7c3df; /* Texto blanco suave */
+    --container-bg: rgba(22, 11, 58, 0.7); /* Fondo de contenedor semi-transparente */
+    --secondary-text-color: #e6d1a3; /* Magenta neón */
+}
+
+/* --- Estilos Generales --- */
+body {
+    background-color: var(--bg-color);
+    background-image: url('../assets/images/galaxia-bg.jpg'); /* Asegúrate de tener una imagen de fondo aquí */
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h2{
+    color: var(--primary-neon-color);
+    text-shadow:
+        0 0 2px var(--primary-neon-color),
+        0 0 4px var(--primary-neon-color),
+        0 0 8px var(--primary-neon-color);
+}
+h1,h3{
+    color: var(--secondary-text-color);
+}
+
+
+/* --- Cabecera y Navegación (ACTUALIZADO) --- */
+.main-header {
+    background: rgba(0,0,0,0.5);
+    padding: 0 2rem; /* Ajuste de padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary-neon-color);
+    box-shadow: 0 0 15px var(--primary-neon-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Empuja el logo a la izquierda y el nav a la derecha */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.logo-placeholder .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-neon-color);
+    text-shadow: 0 0 10px var(--primary-neon-color);
+}
+
+/* --- Contenedor de Secciones (ACTUALIZADO) --- */
+.section-container {
+    max-width: 960px;
+    margin: 4rem auto; /* Aumenta el margen para separar de la sección de inicio */
+    padding: 2rem;
+    background: var(--container-bg);
+    border: 1px solid var(--secondary-neon-color);
+    border-radius: 10px;
+    /* Se eliminó el box-shadow inset */
+}
+
+/* --- Sección Inicio (NUEVO ESTILO) --- */
+#inicio {
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Efecto de desvanecimiento radial */
+    background: radial-gradient(ellipse at center, rgba(11, 30, 58, 0.8) 0%, rgba(22, 11, 58, 0) 70%);
+}
+
+.inicio-content {
+    display: flex;
+    flex-direction: column; /* Apila la foto sobre el texto */
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.personal-photo {
+    width: 180px; /* Un poco más grande */
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-neon-color);
+    box-shadow: 0 0 20px var(--primary-neon-color);
+}
+
+.inicio-text h2 {
+    font-size: 2.5rem;
+}
+
+/* --- Tabla de Estudios --- */
+.studies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.studies-table th, .studies-table td {
+    border: 1px solid var(--secondary-neon-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+.studies-table thead {
+    background-color: rgba(248, 0, 255, 0.2);
+}
+
+/* --- Carrusel de Pasatiempos --- */
+.carousel {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid var(--primary-neon-color);
+    box-shadow: 0 0 15px var(--primary-neon-color);
+    border-radius: 8px;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none;
+}
+.carousel-item.active {
+    display: block;
+}
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+}
+.carousel-caption h3 { margin-top: 0; }
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-neon-color);
+    color: var(--primary-neon-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
+
+/* --- Lista de Proyectos --- */
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+.project-list li {
+    border-left: 3px solid var(--secondary-neon-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+.project-list a {
+    color: var(--primary-neon-color);
+    text-decoration: none;
+}
+
+/* --- Formulario de Contacto --- */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form label, #contact-form legend {
+    color: var(--text-color);
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--secondary-neon-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+#contact-form input:focus, #contact-form select:focus, #contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-neon-color);
+    box-shadow: 0 0 10px var(--primary-neon-color);
+}
+
+.submit-btn, .clear-btn {
+    padding: 0.75rem;
+    border: 2px solid var(--primary-neon-color);
+    background: transparent;
+    color: var(--primary-neon-color);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.submit-btn:hover, .clear-btn:hover {
+    background-color: var(--primary-neon-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary-neon-color);
+}
+.clear-btn {
+    border-color: #ff3333;
+    color: #ff3333;
+    width: 200px;
+    margin: 1rem 0;
+}
+.clear-btn:hover {
+    background-color: #ff3333;
+    box-shadow: 0 0 20px #ff3333;
+}
+
+
+/* --- Lista de Contactos Guardados --- */
+.contact-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border: 1px solid var(--primary-neon-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.contact-item-actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid;
+    color: var(--text-color);
+}
+.edit-btn { border-color: #33aaff; color: #33aaff; }
+.delete-btn { border-color: #ff3333; color: #ff3333; }
+
+/* Mensajes de feedback */
+#messages {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+.success-message {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 1px solid #0f0;
+    color: #0f0;
+    display: block;
+}
+.error-message {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid #f00;
+    color: #f00;
+    display: block;
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--secondary-neon-color);
+}
