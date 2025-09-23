@@ -4,9 +4,33 @@
     --primary-neon-color: #00ffff;
     --secondary-neon-color: #e6d1a3;
     --text-color: #c7c3df;
-    --container-bg: rgba(19, 19, 19, 0.712);
+    --container-bg: rgba(17, 8, 27, 0.719);
 }
-
+/* Estilos del preloader (la capa oscura) */
+#pre-load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: opacity 3.5s ease-in-out; /* Duración del fade-out */
+}
+#pre-load.hidden {
+  opacity: 0;
+  pointer-events: none; /* No bloquea el contenido después */
+}
+/* Estilos para ocultar el contenido inicialmente */
+.load {
+    display: none;
+    opacity: 0; /* Lo hacemos transparente */
+    transition: opacity 3s ease; /* Fade-in del contenido */
+}
+.load.visible {
+    display: block;
+    opacity: 1; /* Lo hacemos visible */
+}
 /* --- Estilos Generales --- */
 body {
     background-color: var(--bg-color);
@@ -109,8 +133,8 @@ h1, h3 {
 }
 
 .personal-photo {
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     border: 3px solid var(--primary-neon-color);
     box-shadow: 0 0 20px var(--primary-neon-color);

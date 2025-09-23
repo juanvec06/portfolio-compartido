@@ -1,3 +1,13 @@
+window.addEventListener("load", function() {
+    const preLoad = document.getElementById('pre-load');
+    const load = document.querySelector('.load');
+
+    
+    setTimeout(() => {
+        preLoad.classList.add("hidden");
+        load.classList.add("visible");
+    }, 1000);
+});
 document.addEventListener("DOMContentLoaded", function() {
 
     // --- (NUEVO) DATOS DE LOS PORTAFOLIOS ---
@@ -12,37 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // --- (NUEVO) LÓGICA DEL CONMUTADOR DE PERFILES ---
-    const switcher = document.getElementById('portfolio-switcher');
     
-    function updatePortfolioContent(portfolioId) {
-        const data = portfolioData[portfolioId];
-        if (!data) return;
-
-        document.querySelector('.personal-photo').src = data.foto;
-        document.querySelector('.inicio-text h2').textContent = data.nombre;
-
-        document.body.classList.remove('portfolio-companero2-active');
-        if (portfolioId === 'companero2') {
-            document.body.classList.add('portfolio-companero2-active');
-        }
-
-        document.querySelectorAll('.portfolio-option').forEach(img => {
-            img.classList.remove('active');
-            if (img.dataset.portfolio === portfolioId) {
-                img.classList.add('active');
-            }
-        });
-
-        localStorage.setItem('currentPortfolio', portfolioId);
-    }
-
-    switcher.addEventListener('click', function(e) {
-        if (e.target.classList.contains('portfolio-option')) {
-            const portfolioId = e.target.dataset.portfolio;
-            updatePortfolioContent(portfolioId);
-        }
-    });
 
     // --- (NUEVO) Carga inicial del portafolio ---
     const savedPortfolio = localStorage.getItem('currentPortfolio') || 'companero1';
