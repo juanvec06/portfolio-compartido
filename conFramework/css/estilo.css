@@ -315,7 +315,7 @@ h1, h3 {
     color: var(--bg-color);
     box-shadow: 0 0 20px #ff3333;
 }
-#proyectos{
+#proyectos, #pasatiempo, #estudios {
     background: radial-gradient(ellipse at right, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%), radial-gradient(ellipse at left, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%);
 }
 
