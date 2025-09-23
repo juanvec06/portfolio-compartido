@@ -189,9 +189,64 @@ h1, h3 {
 }
 .studies-table {
     border-color: var(--secondary-neon-color);
+    border-collapse: separate; /* Necesario para que el borde redondeado funcione bien */
+    border-spacing: 0;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/* 2. Encabezado: Fondo más oscuro, texto en negrita, tamaño de 19px y línea inferior gruesa */
 .studies-table thead {
-    background-color: rgba(22, 11, 58, 0.7); /* Un color más acorde a la paleta */
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo ligeramente más oscuro que las filas */
+}
+
+.studies-table th {
+    font-size: 19px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--secondary-neon-color); /* Línea inferior más gruesa */
+    text-align: left;
+}
+
+/* 3. Espaciado y Tipografía del cuerpo: Padding de celdas y tamaño de fuente de 16px */
+.studies-table th,
+.studies-table td {
+    padding: 12px 16px; /* Padding vertical y horizontal */
+    vertical-align: middle;
+}
+.studies-table tbody td {
+    font-size: 16px; /* Tamaño de fuente del cuerpo */
+}
+
+/* 4. Interacción: Efecto hover en las filas con transición suave */
+.studies-table tbody tr {
+    transition: transform 150ms ease-in-out, background-color 150ms ease-in-out; /* Transición de 150ms */
+    will-change: transform; /* Optimización para la animación */
+}
+
+.studies-table tbody tr:hover {
+    background-color: rgba(230, 209, 163, 0.08); /* Fondo sutil para el hover */
+    transform: translateY(-3px); /* Elevación sutil */
+    cursor: default;
+}
+
+/* 5. Extras: Icono de ubicación en el encabezado */
+.location-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+}
+
+.location-header::before {
+    content: '';
+    display: inline-block;
+    width: 1em; /* Ancho relativo al tamaño de la fuente */
+    height: 1em; /* Alto relativo al tamaño de la fuente */
+    background-color: currentColor; /* El icono toma el color del texto */
+    /* Icono SVG de un pin de ubicación, codificado para URL */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 /* --- (REFACTORIZADO) Carrusel de Bootstrap --- */
@@ -258,8 +313,8 @@ h1, h3 {
     color: var(--bg-color);
     box-shadow: 0 0 20px #ff3333;
 }
-#pasatiempos{
-    background: radial-gradient(ellipse at right, rgba(11, 30, 58, 0.8) 0%, rgba(11, 39, 58, 0) 50%), radial-gradient(ellipse at left, rgba(11, 30, 58, 0.8) 0%, rgba(11, 39, 58, 0) 50%);
+#proyectos{
+    background: radial-gradient(ellipse at right, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%), radial-gradient(ellipse at left, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%);
 }
 
 .text-justify {
