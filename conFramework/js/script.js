@@ -6,27 +6,13 @@ window.addEventListener("load", function() {
     setTimeout(() => {
         preLoad.classList.add("hidden");
         load.classList.add("visible");
-    }, 1000);
-});
-document.addEventListener("DOMContentLoaded", function() {
-
-    // --- (NUEVO) DATOS DE LOS PORTAFOLIOS ---
-    const portfolioData = {
-        'companero1': {
-            nombre: 'Tu Nombre Completo',
-            foto: 'assets/images/tu-foto.png',
-        },
-        'companero2': {
-            nombre: 'Juan David Perdomo',
-            foto: 'assets/images/juanda.jpg',
-        }
-    };
-
+    }, 1500);
     
+});
 
+document.addEventListener("DOMContentLoaded", function() {
     // --- (NUEVO) Carga inicial del portafolio ---
     const savedPortfolio = localStorage.getItem('currentPortfolio') || 'companero1';
-    updatePortfolioContent(savedPortfolio);
 
 
     // --- (ELIMINADO) LÓGICA DEL CARRUSEL ---

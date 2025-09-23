@@ -15,7 +15,64 @@
     height: 100%;
     background-color: black;
     z-index: 9999; /* Asegura que esté por encima de todo */
-    transition: opacity 3.5s ease-in-out; /* Duración del fade-out */
+    transition: opacity 2.5s ease-in-out; /* Duración del fade-out */
+    display: flex;               /* <-- agregado: usa flexbox para centrar */
+    align-items: center;         /* <-- agregado: centra verticalmente */
+    justify-content: center;     /* <-- agregado: centra horizontalmente */
+    padding: 1rem;               /* evita que el logo toque bordes en móviles */
+}
+
+/* centrado del contenedor del logo (id usado en tu HTML) */
+#container-initial-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* para posicionar el pseudo-elemento */
+}
+
+/* asegura tamaño razonable del logo y hereda estilos de .portfolio-option si existen */
+#initial-logo{
+    max-width: 160px;
+    width: 20vw;
+    height: auto;
+    min-width: 48px;
+    border-radius: 50%;
+    position: relative;
+}
+
+@property --degrees {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+#container-initial-logo::after, #container-initial-logo::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:conic-gradient(from var(--degrees),transparent 50%, var(--primary-neon-color));
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(1.05);
+    animation: 1.5s rotate ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes rotate {
+    0% {
+        --degrees: 0deg;
+        transform: scale(1.05); /* Estado inicial */
+    }
+    90% {
+        transform: scale(1.05); /* Mantiene el tamaño hasta el 90% */
+    }
+    100% {
+        --degrees: 360deg;
+        transform: scale(0.9);  /* Reduce el tamaño en el último 10% */
+    }
+}
+#container-initial-logo::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
 }
 #pre-load.hidden {
   opacity: 0;
@@ -25,7 +82,7 @@
 .load {
     display: none;
     opacity: 0; /* Lo hacemos transparente */
-    transition: opacity 3s ease; /* Fade-in del contenido */
+    transition: opacity 2s ease; /* Fade-in del contenido */
 }
 .load.visible {
     display: block;
@@ -44,9 +101,6 @@ body {
     transition: background-image 0.5s ease-in-out;
 }
 
-body.portfolio-companero2-active {
-    background-image: url('../assets/images/galaxia-bg2.jpg');
-}
 
 h2 {
     color: var(--primary-neon-color);
@@ -81,12 +135,6 @@ h1, h3 {
 .navbar .nav-link:hover, .navbar .nav-link.active {
     color: var(--primary-neon-color);
     text-shadow: 0 0 10px var(--primary-neon-color);
-}
-
-/* --- Estilos del Conmutador de Perfiles (Sin cambios) --- */
-.portfolio-switcher {
-    display: flex;
-    gap: 1rem;
 }
 
 .portfolio-option {
@@ -124,7 +172,7 @@ h1, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(ellipse at center, rgba(11, 30, 58, 0.8) 0%, rgba(22, 11, 58, 0) 70%);
+    background: radial-gradient(circle at 25% 50%, rgba(11, 30, 58, 0.8) 0%, rgba(22, 11, 58, 0) 35%);
 }
 
 .inicio-content {
