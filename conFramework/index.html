@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Personal</title>
-    <!-- (NUEVO) Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- (IMPORTANTE) Tu hoja de estilos va DESPUÉS de Bootstrap para poder sobreescribir -->
     <link rel="stylesheet" href="css/estilo.css">
@@ -51,15 +51,21 @@
     <main>
         <!-- SECCIÓN INICIO (Full-width) -->
         <section id="inicio">
-            <div class="inicio-content text-center">
-                <img src="assets/images/tu-foto.png" alt="Foto Personal" class="personal-photo mb-4">
-                <div class="inicio-text">
-                    <h2>Nombre Completo Aquí</h2>
-                    <p><strong>Fecha de Nacimiento:</strong> 01 de Enero de 2000</p>
-                    <p><strong>Mis expectativas como profesional:</strong></p>
-                    <p class="lead">
-                        Busco aplicar mis conocimientos en desarrollo de software para crear soluciones innovadoras que impacten positivamente en la sociedad. Mi objetivo es crecer en un entorno colaborativo, aprender continuamente sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
-                    </p>
+            <div class="inicio-content container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 text-start px-sm-1">
+                        <img src="assets/images/tu-foto.png" alt="Foto Personal" class="personal-photo mb-4">
+                    </div>
+                    <div class="col-12 col-md-6 px-sm-1">
+                        <div class="inicio-text text-md-start">
+                            <h2>Nombre Completo Aquí</h2>
+                            <p><strong>Fecha de Nacimiento:</strong> 01 de Enero de 2000</p>
+                            <p><strong>Mis expectativas como profesional:</strong></p>
+                            <p class="lead text-justify">
+                                Busco aplicar mis conocimientos en desarrollo de software para crear soluciones innovadoras que impacten positivamente en la sociedad. Mi objetivo es crecer en un entorno colaborativo, aprender continuamente sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -244,6 +250,11 @@
     <script src="js/contacto/Contacto.js"></script>
     <script src="js/contacto/ContactRepository.js"></script>
     <script src="js/contacto/ContactFacade.js"></script>
+
+    <!-- Componente React para la tarjeta de perfil -->
+    <script type="text/babel" src="js/ProfileCard.js"></script>
+    <script src="js/app.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 </html>

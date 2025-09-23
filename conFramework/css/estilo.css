@@ -4,7 +4,7 @@
     --primary-neon-color: #00ffff;
     --secondary-neon-color: #e6d1a3;
     --text-color: #c7c3df;
-    --container-bg: rgba(22, 11, 58, 0.7);
+    --container-bg: rgba(19, 19, 19, 0.712);
 }
 
 /* --- Estilos Generales --- */
@@ -91,7 +91,6 @@ h1, h3 {
 .section-container {
     padding: 2rem;
     background: var(--container-bg);
-    border: 1px solid var(--secondary-neon-color);
     border-radius: 10px;
 }
 
@@ -105,7 +104,7 @@ h1, h3 {
 }
 
 .inicio-content {
-    max-width: 800px;
+    max-width: 1200px;
     padding: 2rem;
 }
 
@@ -116,11 +115,7 @@ h1, h3 {
     border: 3px solid var(--primary-neon-color);
     box-shadow: 0 0 20px var(--primary-neon-color);
 }
-
-/* --- (REFACTORIZADO) Tabla de Estudios --- */
 .studies-table {
-    /* Las clases de Bootstrap table-dark y table-bordered ya hacen la mayor parte del trabajo. */
-    /* Aquí podemos sobreescribir si es necesario. */
     border-color: var(--secondary-neon-color);
 }
 .studies-table thead {
@@ -191,7 +186,13 @@ h1, h3 {
     color: var(--bg-color);
     box-shadow: 0 0 20px #ff3333;
 }
+#pasatiempos{
+    background: radial-gradient(ellipse at right, rgba(11, 30, 58, 0.8) 0%, rgba(11, 39, 58, 0) 50%), radial-gradient(ellipse at left, rgba(11, 30, 58, 0.8) 0%, rgba(11, 39, 58, 0) 50%);
+}
 
+.text-justify {
+    text-align: justify;
+}
 .contact-item { background-color: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid var(--primary-neon-color); border-radius: 5px; margin-bottom: 1rem; }
 .contact-item-actions button { margin-right: 10px; padding: 5px 10px; cursor: pointer; background-color: transparent; border: 1px solid; color: var(--text-color); }
 .edit-btn { border-color: #33aaff; color: #33aaff; }
