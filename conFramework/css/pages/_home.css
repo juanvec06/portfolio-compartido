@@ -1,0 +1,25 @@
+/* --- Estilos Específicos de la Página de Inicio --- */
+#inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 25% 50%, rgba(11, 30, 58, 0.8) 0%, rgba(22, 11, 58, 0) 35%);
+}
+
+.inicio-content {
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.personal-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-neon-color);
+    box-shadow: 0 0 20px var(--primary-neon-color);
+}
+
+#proyectos, #pasatiempo, #estudios {
+    background: radial-gradient(ellipse at right, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%), radial-gradient(ellipse at left, #e6d1a31c 0%, rgba(11, 39, 58, 0) 50%);
+}

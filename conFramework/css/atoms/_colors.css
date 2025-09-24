@@ -1,0 +1,8 @@
+/* --- Variables de Color y Estilo Neón --- */
+:root {
+    --bg-color: #000000bf;
+    --primary-neon-color: #00ffff;
+    --secondary-neon-color: #e6d1a3;
+    --text-color: #c7c3df;
+    --container-bg: rgba(17, 8, 27, 0.719);
+}

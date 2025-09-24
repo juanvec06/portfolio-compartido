@@ -1,0 +1,23 @@
+/* --- Importación de todos los archivos CSS --- */
+
+/* 1. Atoms */
+@import url('atoms/_colors.css');
+@import url('atoms/_typography.css');
+@import url('atoms/_buttons.css');
+
+/* 2. Molecules */
+@import url('molecules/_form.css');
+@import url('molecules/_nav.css');
+@import url('molecules/_carousel.css');
+@import url('molecules/_tables.css');
+
+/* 3. Organisms */
+@import url('organisms/_preloader.css');
+@import url('organisms/_sections.css');
+@import url('organisms/_footer.css');
+
+/* 4. Templates */
+@import url('templates/_layout.css');
+
+/* 5. Pages */
+@import url('pages/_home.css');

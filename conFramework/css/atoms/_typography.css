@@ -1,0 +1,14 @@
+h2 {
+    color: var(--primary-neon-color);
+    text-shadow:
+        0 0 2px var(--primary-neon-color),
+        0 0 4px var(--primary-neon-color),
+        0 0 8px var(--primary-neon-color);
+}
+h1, h3 {
+    color: var(--secondary-neon-color);
+}
+
+.text-justify {
+    text-align: justify;
+}

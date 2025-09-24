@@ -1,0 +1,18 @@
+/* --- Carrusel de Bootstrap --- */
+.carousel {
+    border: 2px solid var(--primary-neon-color);
+    box-shadow: 0 0 15px var(--primary-neon-color);
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que las imágenes no se salgan del borde redondeado */
+}
+
+.carousel-item img {
+    height: 450px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Evita que las imágenes se deformen */
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}

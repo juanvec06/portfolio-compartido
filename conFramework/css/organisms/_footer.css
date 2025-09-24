@@ -1,0 +1,4 @@
+/* --- Estilos del Footer --- */
+.main-footer {
+    border-top: 1px solid var(--secondary-neon-color);
+}

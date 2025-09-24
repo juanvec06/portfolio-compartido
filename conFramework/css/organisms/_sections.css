@@ -1,0 +1,48 @@
+/* --- Estilos de Secciones --- */
+.section-container {
+    padding: 2rem;
+    background: var(--container-bg);
+    border-radius: 10px;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+.project-list li {
+    border-left: 3px solid var(--secondary-neon-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+.project-list a {
+    color: var(--primary-neon-color);
+    text-decoration: none;
+}
+
+.contact-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border: 1px solid var(--primary-neon-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#messages {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+.success-message {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 1px solid #0f0;
+    color: #0f0;
+    display: block;
+}
+.error-message {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid #f00;
+    color: #f00;
+    display: block;
+}
