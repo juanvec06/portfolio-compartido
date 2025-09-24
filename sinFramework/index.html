@@ -4,23 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tt+Commons+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="header-content">
-            <!-- (NUEVO) Contenedor para alinear logo y conmutador a la izquierda -->
             <div class="header-left">
                 <div class="logo-placeholder">
-                    <span class="logo-text">Portafolios</span>
-                </div>
-                <!-- (NUEVO) Conmutador de perfiles -->
-                <div class="portfolio-switcher" id="portfolio-switcher">
-                    <img src="assets/images/tu-foto.png" alt="Ver mi portafolio" 
-                         class="portfolio-option active" data-portfolio="companero1">
-                    <img src="assets/images/juanda.jpg" alt="Ver portafolio de Juanda" 
-                         class="portfolio-option" data-portfolio="companero2">
+                    <span class="logo-text">Mi Portafolio</span>
                 </div>
             </div>
             <nav class="main-nav">
@@ -34,22 +27,20 @@
     </header>
 
     <main>
-        <!-- SECCIÓN INICIO (SIN CONTAINER Y CON EFECTO DESVANECIDO) -->
+        <!-- SECCIÓN INICIO -->
         <section id="inicio">
             <div class="inicio-content">
-                <img src="assets/images/tu-foto.png" alt="Foto Personal" class="personal-photo">
+                <img src="assets/images/fotoperfil.jpg" alt="Foto Personal" class="personal-photo">
                 <div class="inicio-text">
-                    <h2>Nombre Completo Aquí</h2>
-                    <p><strong>Fecha de Nacimiento:</strong> 01 de Enero de 2000</p>
+                    <h2>Juan David Perdomo</h2>
+                    <p><strong>Fecha de Nacimiento:</strong> 09 de septiembre de 2004</p>
                     <p><strong>Mis expectativas como profesional:</strong></p>
                     <p>
-                        Aquí va un texto breve (máximo 150 palabras) sobre tus aspiraciones y metas profesionales. Busco aplicar mis conocimientos en desarrollo de software para crear soluciones innovadoras que impacten positivamente en la sociedad. Mi objetivo es crecer en un entorno colaborativo, aprender continuamente sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
+                        Busco aplicar mis conocimientos en desarrollo de software para crear soluciones innovadoras que impacten positivamente en la sociedad. Mi objetivo es crecer en un entorno colaborativo, aprender continuamente sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
                     </p>
                 </div>
             </div>
         </section>
-
-        <!-- El resto de tu HTML sigue igual... -->
         
         <!-- SECCIÓN ESTUDIOS -->
         <section id="estudios" class="section-container">
@@ -60,21 +51,21 @@
                         <th>Nivel</th>
                         <th>Institución</th>
                         <th>Años</th>
-                        <th>Ubicación (Opcional)</th>
+                        <th>Ubicación</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>Bachillerato</td>
+                        <td>I.E.M. Nacional</td>
+                        <td>2016 - 2021</td>
+                        <td>Pitalito Huila, Colombia</td>
+                    </tr>
                     <tr>
                         <td>Universidad</td>
                         <td>Universidad del Cauca</td>
                         <td>2021 - 2025</td>
                         <td>Popayán, Colombia</td>
-                    </tr>
-                    <tr>
-                        <td>Bachillerato</td>
-                        <td>Colegio Ejemplo</td>
-                        <td>2015 - 2020</td>
-                        <td>Ciudad, País</td>
                     </tr>
                 </tbody>
             </table>
@@ -88,22 +79,22 @@
                     <div class="carousel-item active">
                         <img src="assets/images/pasatiempo1.jpg" alt="Pasatiempo 1">
                         <div class="carousel-caption">
-                            <h3>Astronomía Amateur</h3>
-                            <p>Me apasiona observar las estrellas y galaxias con mi telescopio. Es fascinante pensar en la inmensidad del universo.</p>
+                            <h3>Hacer ejercicio</h3>
+                            <p>Quiero buscar un buen fisico y mantenerme saludable. Me ayuda a liberar tensiones y sentirme mejor conmigo mismo.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/pasatiempo2.jpg" alt="Pasatiempo 2">
                         <div class="carousel-caption">
-                            <h3>Senderismo</h3>
-                            <p>Disfruto explorar montañas y conectar con la naturaleza. Me ayuda a despejar la mente y mantenerme activo.</p>
+                            <h3>Ver películas o series</h3>
+                            <p>Hacen que me pueda sumergir en diferentes historias y emociones. Me encanta disfrutar de una buena trama mientras me relajo en casa.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/pasatiempo3.jpg" alt="Pasatiempo 3">
                         <div class="carousel-caption">
-                            <h3>Videojuegos Retro</h3>
-                            <p>Colecciono y juego clásicos de los 80 y 90. Me encanta su simplicidad, su reto y la nostalgia que evocan.</p>
+                            <h3>Salir con amigos</h3>
+                            <p>Salir con amigos es una de mis actividades favoritas. Disfruto de pasar tiempo con ellos, ya sea en casa, yendo a comer o explorando nuevos lugares.</p>
                         </div>
                     </div>
                 </div>
@@ -117,14 +108,14 @@
             <h1 class="section-title">Proyectos</h1>
             <ul class="project-list">
                 <li>
-                    <h3>Proyecto Alpha</h3>
-                    <p>Una aplicación web para la gestión de tareas personales. Desarrollada con HTML, CSS y JavaScript puros. <a href="#" target="_blank">Ver proyecto</a></p>
-                    <p><em>Tecnologías: JavaScript, HTML5, CSS3.</em></p>
+                    <h3>JuiceStock</h3>
+                    <p>Una aplicación de escritorio para la gestión de productos<a href="#" target="_blank">Ver proyecto</a></p>
+                    <p><em>Tecnologías: Java, JavaSwing.</em></p>
                 </li>
                 <li>
-                    <h3>Bot de Discord "Stellar"</h3>
-                    <p>Un bot para servidores de Discord que proporciona datos astronómicos diarios utilizando una API externa.</p>
-                    <p><em>Tecnologías: Node.js, Discord.js API.</em></p>
+                    <h3>TodoApp</h3>
+                    <p>Una aplicación web para la gestión de tareas pendientes, con funcionalidades de agregar, eliminar y marcar tareas como completadas. <a href="#" target="_blank">Ver proyecto</a></p>
+                    <p><em>Tecnologías: JavaScript, HTML5, CSS3.</em></p>
                 </li>
             </ul>
         </section>
@@ -180,7 +171,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 - Mi Página Personal. Diseñado por [Tu Nombre].</p>
+        <p>&copy; 2025 - Juan David Perdomo Ramos.</p>
     </footer>
 
     <!-- SCRIPTS -->
