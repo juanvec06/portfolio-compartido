@@ -6,7 +6,7 @@
     --negro: #1b1c1e;
     --verde-oscuro: #003036;
     --verde-azulado: #015c65;
-    --turquesa: #008994;
+    --turquesa: #00a4b0;
     --azul-claro: #6aa5c1;
     --azul-oscuro: #2b5571;
     
@@ -51,7 +51,8 @@ h1, h3 {
 }
 
 h2 {
-    color: var(--azul-claro);
+    color: var(--turquesa);
+    text-shadow: 0px 0px 10px var(--negro);
 }
 
 
