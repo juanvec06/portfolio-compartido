@@ -186,7 +186,7 @@ h1, h3 {
     border-radius: 50%;
     border: 3px solid var(--primary-neon-color);
     box-shadow: 0 0 20px var(--primary-neon-color);
-    opacity: 0.8;
+    
 }
 .studies-table {
     border-color: var(--secondary-neon-color);
