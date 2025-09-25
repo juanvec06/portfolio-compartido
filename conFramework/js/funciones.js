@@ -1,3 +1,4 @@
+// Evento para la pantalla de carga
 window.addEventListener("load", function() {
     const preLoad = document.getElementById('pre-load');
     const load = document.querySelector('.load');
@@ -11,15 +12,10 @@ window.addEventListener("load", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // --- (NUEVO) Carga inicial del portafolio ---
+    // --- Carga inicial del portafolio ---
     const savedPortfolio = localStorage.getItem('currentPortfolio') || 'companero1';
 
-
-    // --- (ELIMINADO) LÓGICA DEL CARRUSEL ---
-    // El carrusel de Bootstrap funciona automáticamente y no necesita este código.
-
-
-    // --- LÓGICA DEL FORMULARIO DE CONTACTO (Sin cambios) ---
+    // --- LÓGICA DEL FORMULARIO DE CONTACTO ---
     const contactForm = document.getElementById('contact-form');
     const contactList = document.getElementById('contact-list');
     const messagesDiv = document.getElementById('messages');
@@ -56,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     }
-
+    // Manejo del envío del formulario
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -93,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactIdInput.value = '';
         renderContacts();
     });
-
+    // Manejo de eventos para editar y eliminar contactos
     contactList.addEventListener('click', function(e) {
         const id = parseInt(e.target.dataset.id);
 
@@ -119,13 +115,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-    
+    // Botón para borrar todos los contactos
     clearAllBtn.addEventListener('click', () => {
         facade.borrarTodo();
         renderContacts();
         showMessage('Todos los contactos han sido eliminados.', 'success');
     });
 
-    // Carga inicial
     renderContacts();
 });

@@ -4,9 +4,9 @@
     color: var(--primary-neon-color);
 }
 .submit-btn:hover {
-    background-color: var(--primary-neon-color);
+    background-color: var(--hover-bg);
     color: var(--bg-color);
-    box-shadow: 0 0 20px var(--primary-neon-color);
+    box-shadow: 0 0 20px var(--hover-bg);
 }
 
 .clear-btn {
