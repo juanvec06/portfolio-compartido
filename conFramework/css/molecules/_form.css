@@ -1,0 +1,29 @@
+/* --- Estilos para Formularios con estilo Neón --- */
+.form-control, .form-select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-neon-color);
+}
+.form-control::placeholder {
+    color: #888;
+}
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+    outline: none;
+    border-color: var(--primary-neon-color);
+    box-shadow: 0 0 10px var(--primary-neon-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.form-check-input:checked {
+    background-color: var(--primary-neon-color);
+    border-color: var(--primary-neon-color);
+}
+
+.contact-item-actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid;
+    color: var(--text-color);
+}

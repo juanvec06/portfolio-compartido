@@ -1,6 +1,6 @@
 class ContactRepository {
     constructor() {
-        this.storageKey = "contactos";
+        this.storageKey = "contactos1";
     }
 
     getAll() {

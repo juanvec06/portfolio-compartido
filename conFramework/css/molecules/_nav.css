@@ -1,0 +1,45 @@
+/* --- Estilos para el Navbar de Bootstrap --- */
+.navbar {
+    background: rgba(0,0,0,0.7);
+    border-bottom: 2px solid var(--primary-neon-color);
+    box-shadow: 0 0 15px var(--primary-neon-color);
+    backdrop-filter: blur(5px); /* Efecto glassmorphism  */
+}
+
+.navbar .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--primary-neon-color);
+    text-shadow: 0 0 10px var(--primary-neon-color);
+}
+
+.portfolio-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.portfolio-option:hover {
+    opacity: 1;
+    border-color: var(--text-color);
+}
+
+.portfolio-option.active {
+    opacity: 1;
+    border-color: var(--primary-neon-color);
+    box-shadow: 0 0 10px var(--primary-neon-color);
+    transform: scale(1.1);
+}

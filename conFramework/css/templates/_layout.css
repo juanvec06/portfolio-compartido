@@ -1,0 +1,23 @@
+/* --- Estilos Generales del Layout --- */
+body {
+    background-color: var(--bg-color);
+    background-image: url('../../assets/images/galaxia-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.load {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.load.visible {
+    display: block;
+    opacity: 1;
+}

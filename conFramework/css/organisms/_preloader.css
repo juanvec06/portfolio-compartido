@@ -1,0 +1,74 @@
+/* --- Estilos del Preloader --- */
+#pre-load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    transition: opacity 2.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#container-initial-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#initial-logo{
+    max-width: 160px;
+    width: 20vw;
+    height: auto;
+    min-width: 48px;
+    border-radius: 50%;
+    position: relative;
+}
+
+@property --degrees {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+#container-initial-logo::after, #container-initial-logo::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:conic-gradient(from var(--degrees),transparent 50%, var(--primary-neon-color));
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(1.05);
+    animation: 1.5s rotate ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+    0% {
+        --degrees: 0deg;
+        transform: scale(1.05);
+    }
+    90% {
+        transform: scale(1.05);
+    }
+    100% {
+        --degrees: 360deg;
+        transform: scale(0.9);
+    }
+}
+
+#container-initial-logo::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+#pre-load.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

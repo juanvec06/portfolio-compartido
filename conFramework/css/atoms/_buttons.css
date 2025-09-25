@@ -1,0 +1,30 @@
+/* --- Estilos de Botones --- */
+.submit-btn {
+    border: 2px solid var(--primary-neon-color);
+    color: var(--primary-neon-color);
+}
+.submit-btn:hover {
+    background-color: var(--hover-bg);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--hover-bg);
+}
+
+.clear-btn {
+    border-color: #ff3333;
+    color: #ff3333;
+}
+.clear-btn:hover {
+    background-color: #ff3333;
+    color: var(--bg-color);
+    box-shadow: 0 0 20px #ff3333;
+}
+
+.edit-btn {
+    border-color: #33aaff;
+    color: #33aaff;
+}
+
+.delete-btn {
+    border-color: #ff3333;
+    color: #ff3333;
+}
