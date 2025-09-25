@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Personal</title>
+    
+    <!-- Fuentes externas -->
     <link href="https://fonts.googleapis.com/css2?family=Tt+Commons+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-
+    <!-- ================================================================
+         HEADER Y NAVEGACIÓN
+         ================================================================ -->
     <header class="main-header">
         <div class="header-content">
+            <!-- Logo -->
             <div class="header-left">
                 <div class="logo-placeholder">
                     <span class="logo-text">Mi Portafolio</span>
                 </div>
             </div>
+            
+            <!-- Navegación principal -->
             <nav class="main-nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#estudios">Estudios</a>
@@ -26,8 +36,11 @@
         </div>
     </header>
 
+    <!-- ================================================================
+         CONTENIDO PRINCIPAL
+         ================================================================ -->
     <main>
-        <!-- SECCIÓN INICIO -->
+        <!-- Sección: Inicio -->
         <section id="inicio">
             <div class="inicio-content">
                 <img src="assets/images/fotoperfil.jpg" alt="Foto Personal" class="personal-photo">
@@ -36,15 +49,19 @@
                     <p><strong>Fecha de Nacimiento:</strong> 09 de septiembre de 2004</p>
                     <p><strong>Mis expectativas como profesional:</strong></p>
                     <p>
-                        Busco aplicar mis conocimientos en desarrollo de software para crear soluciones innovadoras que impacten positivamente en la sociedad. Mi objetivo es crecer en un entorno colaborativo, aprender continuamente sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
+                        Busco aplicar mis conocimientos en desarrollo de software para crear 
+                        soluciones innovadoras que impacten positivamente en la sociedad. Mi 
+                        objetivo es crecer en un entorno colaborativo, aprender continuamente 
+                        sobre nuevas tecnologías y contribuir al éxito de proyectos desafiantes.
                     </p>
                 </div>
             </div>
         </section>
         
-        <!-- SECCIÓN ESTUDIOS -->
+        <!-- Sección: Estudios -->
         <section id="estudios" class="section-container">
             <h1 class="section-title">Estudios</h1>
+            
             <table class="studies-table">
                 <thead>
                     <tr>
@@ -71,62 +88,94 @@
             </table>
         </section>
 
-        <!-- SECCIÓN PASATIEMPOS (CON CARRUSEL) -->
+        <!-- Sección: Pasatiempos -->
         <section id="pasatiempos" class="section-container">
             <h1 class="section-title">Mis Pasatiempos</h1>
+            
+            <!-- Carrusel de imágenes -->
             <div class="carousel">
                 <div class="carousel-inner">
+                    <!-- Slide 1: Ejercicio -->
                     <div class="carousel-item active">
-                        <img src="assets/images/pasatiempo1.jpg" alt="Pasatiempo 1">
+                        <img src="assets/images/pasatiempo1.jpg" alt="Hacer ejercicio">
                         <div class="carousel-caption">
                             <h3>Hacer ejercicio</h3>
-                            <p>Quiero buscar un buen fisico y mantenerme saludable. Me ayuda a liberar tensiones y sentirme mejor conmigo mismo.</p>
+                            <p>
+                                Quiero buscar un buen físico y mantenerme saludable. Me ayuda a 
+                                liberar tensiones y sentirme mejor conmigo mismo.
+                            </p>
                         </div>
                     </div>
+                    
+                    <!-- Slide 2: Entretenimiento -->
                     <div class="carousel-item">
-                        <img src="assets/images/pasatiempo2.jpg" alt="Pasatiempo 2">
+                        <img src="assets/images/pasatiempo2.jpg" alt="Ver películas o series">
                         <div class="carousel-caption">
                             <h3>Ver películas o series</h3>
-                            <p>Hacen que me pueda sumergir en diferentes historias y emociones. Me encanta disfrutar de una buena trama mientras me relajo en casa.</p>
+                            <p>
+                                Hacen que me pueda sumergir en diferentes historias y emociones. 
+                                Me encanta disfrutar de una buena trama mientras me relajo en casa.
+                            </p>
                         </div>
                     </div>
+                    
+                    <!-- Slide 3: Vida social -->
                     <div class="carousel-item">
-                        <img src="assets/images/pasatiempo3.jpg" alt="Pasatiempo 3">
+                        <img src="assets/images/pasatiempo3.jpg" alt="Salir con amigos">
                         <div class="carousel-caption">
                             <h3>Salir con amigos</h3>
-                            <p>Salir con amigos es una de mis actividades favoritas. Disfruto de pasar tiempo con ellos, ya sea en casa, yendo a comer o explorando nuevos lugares.</p>
+                            <p>
+                                Salir con amigos es una de mis actividades favoritas. Disfruto de 
+                                pasar tiempo con ellos, ya sea en casa, yendo a comer o explorando 
+                                nuevos lugares.
+                            </p>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Controles del carrusel -->
                 <button class="carousel-control prev">&lt;</button>
                 <button class="carousel-control next">&gt;</button>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS -->
+        <!-- Sección: Proyectos -->
         <section id="proyectos" class="section-container">
             <h1 class="section-title">Proyectos</h1>
+            
             <ul class="project-list">
                 <li>
                     <h3>JuiceStock</h3>
-                    <p>Una aplicación de escritorio para la gestión de productos<a href="#" target="_blank">Ver proyecto</a></p>
+                    <p>
+                        Una aplicación de escritorio para la gestión de productos. 
+                        <a href="#" target="_blank">Ver proyecto</a>
+                    </p>
                     <p><em>Tecnologías: Java, JavaSwing.</em></p>
                 </li>
                 <li>
                     <h3>TodoApp</h3>
-                    <p>Una aplicación web para la gestión de tareas pendientes, con funcionalidades de agregar, eliminar y marcar tareas como completadas. <a href="#" target="_blank">Ver proyecto</a></p>
+                    <p>
+                        Una aplicación web para la gestión de tareas pendientes, con 
+                        funcionalidades de agregar, eliminar y marcar tareas como completadas. 
+                        <a href="#" target="_blank">Ver proyecto</a>
+                    </p>
                     <p><em>Tecnologías: JavaScript, HTML5, CSS3.</em></p>
                 </li>
             </ul>
         </section>
 
-        <!-- SECCIÓN CONTACTO -->
+        <!-- Sección: Contacto -->
         <section id="contacto" class="section-container">
             <h1 class="section-title">Contacto</h1>
+            
+            <!-- Mensajes del sistema -->
             <div id="messages"></div>
+            
+            <!-- Formulario de contacto -->
             <form id="contact-form">
                 <input type="hidden" id="contact-id">
                 
+                <!-- Campos básicos -->
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -136,6 +185,7 @@
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono" required>
 
+                <!-- Motivo del contacto -->
                 <label for="motivo">Motivo de Contacto:</label>
                 <select id="motivo" name="motivo">
                     <option value="profesional">Propuesta Profesional</option>
@@ -143,14 +193,17 @@
                     <option value="otro">Otro</option>
                 </select>
 
+                <!-- Mensaje -->
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
+                <!-- Términos y condiciones -->
                 <div class="form-group-inline">
                     <input type="checkbox" id="terminos" name="terminos" required>
                     <label for="terminos">Acepto los términos y condiciones</label>
                 </div>
                 
+                <!-- Preferencias de contacto -->
                 <fieldset class="radio-group">
                     <legend>Preferencia de Contacto:</legend>
                     <input type="radio" id="pref-email" name="preferencia" value="email" checked>
@@ -159,9 +212,11 @@
                     <label for="pref-tel">Teléfono</label>
                 </fieldset>
 
+                <!-- Botón de envío -->
                 <button type="submit" class="submit-btn">Guardar Contacto</button>
             </form>
             
+            <!-- Lista de contactos guardados -->
             <h2 class="section-subtitle">Contactos Guardados</h2>
             <button id="clear-all-btn" class="clear-btn">Borrar Todo</button>
             <div id="contact-list">
@@ -170,14 +225,22 @@
         </section>
     </main>
 
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
     <footer class="main-footer">
         <p>&copy; 2025 - Juan David Perdomo Ramos.</p>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- ================================================================
+         SCRIPTS
+         ================================================================ -->
+    <!-- Scripts del sistema de contacto -->
     <script src="js/contacto/Contacto.js"></script>
     <script src="js/contacto/ContactRepository.js"></script>
     <script src="js/contacto/ContactFacade.js"></script>
+    
+    <!-- Script principal -->
     <script src="js/script.js"></script>
 </body>
 </html>

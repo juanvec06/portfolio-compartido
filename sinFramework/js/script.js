@@ -1,13 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
+/* =================================================================
+   SCRIPT PRINCIPAL - PORTAFOLIO PERSONAL
+   ================================================================= */
 
-    // --- LÓGICA DEL CARRUSEL DE PASATIEMPOS ---
-    const carouselInner = document.querySelector('.carousel-inner');
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // =============================================================
+    // CARRUSEL DE PASATIEMPOS
+    // =============================================================
+    
+    // Elementos del carrusel
     const items = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.carousel-control.prev');
     const nextBtn = document.querySelector('.carousel-control.next');
     let currentIndex = 0;
 
-    // Función para mostrar un slide específico
+    /**
+     * Muestra un slide específico del carrusel
+     * @param {number} index - Índice del slide a mostrar
+     */
     function showSlide(index) {
         items.forEach((item, i) => {
             item.classList.remove('active');
@@ -17,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Navegación del carrusel
+    // Event listeners para navegación del carrusel
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % items.length;
@@ -32,7 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- LÓGICA DEL FORMULARIO DE CONTACTO ---
+    // =============================================================
+    // SISTEMA DE CONTACTOS
+    // =============================================================
+    
+    // Elementos del DOM
     const contactForm = document.getElementById('contact-form');
     const contactList = document.getElementById('contact-list');
     const messagesDiv = document.getElementById('messages');
@@ -42,7 +56,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Inicializar el sistema de contactos
     const facade = new ContactFacade();
 
-    // Función para mostrar mensajes al usuario
+    // =============================================================
+    // FUNCIONES AUXILIARES
+    // =============================================================
+    
+    /**
+     * Muestra mensajes al usuario en la interfaz
+     * @param {string} message - Mensaje a mostrar
+     * @param {string} type - Tipo de mensaje ('success' o 'error')
+     */
     function showMessage(message, type) {
         if (messagesDiv) {
             messagesDiv.textContent = message;
@@ -50,11 +72,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    /**
+     * Renderiza la lista de contactos en el DOM
+     */
     function renderContacts() {
         const contacts = facade.listarContactos();
         contactList.innerHTML = '';
-        if(contacts.length === 0){
-             contactList.innerHTML = '<p>No hay contactos guardados.</p>';
+        
+        if (contacts.length === 0) {
+            contactList.innerHTML = '<p>No hay contactos guardados.</p>';
         } else {
             contacts.forEach(contact => {
                 const contactDiv = document.createElement('div');
@@ -74,16 +100,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // =============================================================
+    // EVENT LISTENERS
+    // =============================================================
+    
+    // Manejo del formulario de contacto
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Validación simple
+        // Obtener y validar datos del formulario
         const nombre = document.getElementById('nombre').value.trim();
         const email = document.getElementById('email').value.trim();
         const telefono = document.getElementById('telefono').value.trim();
         const mensaje = document.getElementById('mensaje').value.trim();
         const terminos = document.getElementById('terminos').checked;
 
+        // Validaciones
         if (!nombre || !email || !telefono || !mensaje) {
             showMessage('Todos los campos son obligatorios.', 'error');
             return;
@@ -93,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        // Preparar datos para guardar
         const formData = {
             id: contactIdInput.value,
             nombre: nombre,
@@ -104,26 +137,32 @@ document.addEventListener("DOMContentLoaded", function() {
             preferencia: document.querySelector('input[name="preferencia"]:checked').value
         };
 
+        // Guardar contacto y mostrar mensaje
         facade.guardarContacto(formData);
-        
         showMessage(formData.id ? 'Contacto actualizado con éxito.' : 'Contacto guardado con éxito.', 'success');
+        
+        // Limpiar formulario y actualizar lista
         contactForm.reset();
-        contactIdInput.value = ''; // Limpiar el ID oculto
+        contactIdInput.value = '';
         renderContacts();
     });
 
+    // Manejo de acciones en la lista de contactos (editar/eliminar)
     contactList.addEventListener('click', function(e) {
         const id = parseInt(e.target.dataset.id);
 
+        // Eliminar contacto
         if (e.target.classList.contains('delete-btn')) {
             facade.eliminarContacto(id);
             renderContacts();
             showMessage('Contacto eliminado.', 'success');
         }
 
+        // Editar contacto
         if (e.target.classList.contains('edit-btn')) {
             const contact = facade.repository.getById(id);
             if (contact) {
+                // Cargar datos del contacto en el formulario
                 contactIdInput.value = contact.id;
                 document.getElementById('nombre').value = contact.nombre;
                 document.getElementById('email').value = contact.email;
@@ -133,19 +172,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('terminos').checked = contact.aceptaTerminos;
                 document.querySelector(`input[name="preferencia"][value="${contact.preferenciaContacto}"]`).checked = true;
                 
-                // Mover el scroll hacia el formulario
+                // Desplazar hacia el formulario
                 contactForm.scrollIntoView({ behavior: 'smooth' });
             }
         }
     });
     
+    // Botón para borrar todos los contactos
     clearAllBtn.addEventListener('click', () => {
         facade.borrarTodo();
         renderContacts();
         showMessage('Todos los contactos han sido eliminados.', 'success');
     });
 
-    // Carga inicial de tus funciones originales
+    // =============================================================
+    // INICIALIZACIÓN
+    // =============================================================
+    
+    // Cargar datos iniciales
     renderContacts();
     showSlide(currentIndex);
 });
